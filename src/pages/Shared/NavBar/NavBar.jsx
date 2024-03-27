@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -6,7 +7,7 @@ const NavBar = () => {
         <>
             
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a className="mr-5 hover:text-gray-900">First Link</a>
+                <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
                 <a className="mr-5 hover:text-gray-900">Second Link</a>
                 <a className="mr-5 hover:text-gray-900">Third Link</a>
                 <a className="mr-5 hover:text-gray-900">Fourth Link</a>
