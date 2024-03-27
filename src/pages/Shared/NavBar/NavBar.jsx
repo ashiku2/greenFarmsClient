@@ -8,9 +8,7 @@ const NavBar = () => {
             
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
-                <a className="mr-5 hover:text-gray-900">Second Link</a>
-                <a className="mr-5 hover:text-gray-900">Third Link</a>
-                <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+                <Link to="/order" className="mr-5 hover:text-gray-900">Order</Link>
             </nav>
         </>
 
@@ -18,10 +16,10 @@ const NavBar = () => {
         <>
             <header className="text-gray-600 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <Link to='/' className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                         <img className='w-28' src="https://i.ibb.co/wR2smtp/Green-and-White-Circle-Icon-Organic-Food-Logo-removebg-preview.png" alt="" />
                         <span className="ml-3 text-2xl text-green-600">GreenFarms</span>
-                    </a>
+                    </Link>
                     {
                         navOptions
                     }
