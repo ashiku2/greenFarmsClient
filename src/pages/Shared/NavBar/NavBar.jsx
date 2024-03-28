@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
-
+import { CiShoppingCart } from "react-icons/ci";
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
 
@@ -17,6 +17,12 @@ const NavBar = () => {
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
                 <Link to="/order" className="mr-5 hover:text-gray-900">Order</Link>
+                <Link>
+                    <button className="btn m-4">
+                        <CiShoppingCart />
+                        <div className="badge badge-secondary">+99</div>
+                    </button>
+                </Link>
                 
                 {
                     user ? <>
