@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from 'axios';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useCart from '../../../hooks/useCart';
 
 
 const PopularItemCards = ({ item }) => {
@@ -14,6 +15,7 @@ const PopularItemCards = ({ item }) => {
     const location = useLocation();
 
     const axiosSecure = useAxiosSecure();
+    const [, refetch] = useCart();
 
     const handleAddToCart = food => {
         if (user && user.email) {
@@ -35,6 +37,7 @@ const PopularItemCards = ({ item }) => {
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        refetch();
                     }
             })
 
