@@ -19,7 +19,7 @@ const NavBar = () => {
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
                 <Link to="/order" className="mr-5 hover:text-gray-900">Order</Link>
-                <Link>
+                <Link to="/dashboard/cart">
                     <button className="btn m-4">
                         <CiShoppingCart />
                         <div className="badge badge-secondary">+{ cart.length }</div>

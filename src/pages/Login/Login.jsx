@@ -4,6 +4,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -82,6 +83,7 @@ const Login = () => {
                             <input type='submit' disabled={disabled} className="btn btn-primary" value={"Login"}/>
                         </form>
                         <p className="text-xs text-gray-500 mt-3">Don't have any account? <Link to="/signup">Register</Link></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </section>
