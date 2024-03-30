@@ -22,11 +22,11 @@ const NavBar = () => {
                 <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
                 <Link to="/order" className="mr-5 hover:text-gray-900">Order</Link>
                 {
-                    isAdmin && isAdmin && <Link to="/dashboard/adminHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
+                    user && isAdmin && <Link to="/dashboard/adminHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
                 }
 
                 {
-                    isAdmin && !isAdmin && <Link to="/dashboard/userHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
+                    user && !isAdmin && <Link to="/dashboard/userHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
                 }
                 <Link to="/dashboard/cart">
                     <button className="btn m-4">
