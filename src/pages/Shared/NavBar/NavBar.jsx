@@ -3,35 +3,44 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
 import { CiShoppingCart } from "react-icons/ci";
 import useCart from '../../../hooks/useCart';
+import useAdmin from '../../../hooks/useAdmin';
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart();
+    const [isAdmin] = useAdmin();
 
     const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.log(error.message))
+            .then(() => { })
+            .catch(error => console.log(error.message))
     }
 
     const navOptions =
         <>
-            
+
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link to="/menu" className="mr-5 hover:text-gray-900">Our Products</Link>
                 <Link to="/order" className="mr-5 hover:text-gray-900">Order</Link>
+                {
+                    isAdmin && isAdmin && <Link to="/dashboard/adminHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
+                }
+
+                {
+                    isAdmin && !isAdmin && <Link to="/dashboard/userHome" className="mr-5 hover:text-gray-900">Dashboard</Link>
+                }
                 <Link to="/dashboard/cart">
                     <button className="btn m-4">
                         <CiShoppingCart />
-                        <div className="badge badge-secondary">+{ cart.length }</div>
+                        <div className="badge badge-secondary">+{cart.length}</div>
                     </button>
                 </Link>
-                
+
                 {
                     user ? <>
-                        <span>{ user?.displayName }</span>
+                        <span>{user?.displayName}</span>
                         <button onClick={handleLogOut} className='btn btn-ghost'>Logout
                         </button>
-                        </>
+                    </>
                         :
                         <>
                             <Link to="/login" className="mr-5 hover:text-gray-900">Login</Link>
@@ -51,9 +60,9 @@ const NavBar = () => {
                     {
                         navOptions
                     }
-                    
+
                 </div>
-            </header>   
+            </header>
         </>
     );
 };
